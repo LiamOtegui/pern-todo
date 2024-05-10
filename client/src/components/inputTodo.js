@@ -14,7 +14,7 @@ const InputTodo = () => {
                 headers: {"Content-type": "application/json"},
                 body: JSON.stringify(body)
             })
-            console.log(response);
+            window.location = "/"
         } catch (error) {
             console.error(error.message);
         }
@@ -27,7 +27,7 @@ const InputTodo = () => {
             <form className="flex justify-center mt-3" onSubmit={onSubmitForm}>
                 <input
                 type="text"
-                className="text borderborder-gray-500 rounded-md shadow w-[20rem] h-[2rem] py-[1.3rem] px-[1rem]"
+                className="text border border-gray-500 rounded-md shadow w-[20rem] h-[2rem] py-[1.3rem] px-[1rem]"
                 value={description}
                 onChange={event => setDescription(event.target.value)} />
                 <button
