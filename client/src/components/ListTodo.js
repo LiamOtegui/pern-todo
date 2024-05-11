@@ -23,18 +23,15 @@ const ListTodo = () => {
     }, [])
 
     return (
-        <div className="mt-10 bg-cyan-500 p-1 rounded-[3rem] mx-[8rem]">
-            <div className="flex flex-wrap justify-between text-[1.5rem] text-cyan-800">
-                <div className="mt-10 mx-10 px-[8rem] py-8 bg-cyan-400 rounded-lg shadow-xl">Description</div>
-                <div className="mt-10 mx-10 px-[8rem] py-8 bg-cyan-400 rounded-lg shadow-xl">Edit</div>
-                <div className="mt-10 mx-10 px-[8rem] py-8 bg-cyan-400 rounded-lg shadow-xl">Delete</div>
-            </div>
-            <div className="text-[1rem] text-cyan-800 mt- mb-10 mx-[1rem] p-8">
+        <div className="mt-10 bg-cyan-400 p-1 rounded-[3rem] mx-[8rem]">
+            <div className="text-[1rem] text-cyan-700 mt- mb-10 mx-[1rem] p-8">
                 <div className="flex flex-wrap justify-center">
                     {
                         todos.map((todo) => (
-                            <div key={todo.todo_id} className="flex justify-center mx-5 my-5 py-[1rem] text-center rounded-lg shadow-xl bg-cyan-300 w-[15%]">
+                            <div key={todo.todo_id} className="flex justify-center mx-5 my-5 py-[1rem] border border-cyan-500 text-center rounded-lg shadow-xl bg-cyan-300 w-[15%]">
                                 <div>{todo.description}</div>
+                                <div>Edit</div>
+                                <div>Delete</div>
                             </div>
                         ))
                     }
