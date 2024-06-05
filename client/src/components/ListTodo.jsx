@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import EditTodo from './EditTodo'
 
 const ListTodo = () => {
 
@@ -32,16 +33,28 @@ const ListTodo = () => {
     }
 
     return (
-        <div>
-            {todos.map(todo => {
-                return (
-                    <div key={todo.todo_id}>
-                        {todo.description}
-                        <button onClick={() => deleteFunction(todo.todo_id)}>Delete</button>
-                    </div>
-                )
-            })}
-        </div>
+        <table className='table mt-5 text-center'>
+            <thead>
+                <tr>
+                    <th>Description</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody className=''>
+                {todos.map(todo => {
+                    return (
+                        <tr key={todo.todo_id}>
+                            <td>{todo.description}</td>
+                            <td><EditTodo todo={todo}/></td>
+                            <td>
+                                <button className='btn btn-danger' onClick={() => deleteFunction(todo.todo_id)}>Delete</button>
+                            </td>
+                        </tr>
+                    )
+                })}
+            </tbody>
+        </table>
     )
 }
 
